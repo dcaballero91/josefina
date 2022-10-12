@@ -95,7 +95,8 @@ def scrapSeis(request):
         options.add_argument("--test-type")
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
-        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/var/www/html/josefina/chrome/chromedriver')
+        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/opt/bonus/chromedriver')
+        print("Driver")
         #Driver para Windows
         #driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\\chrome\\chromedriver.exe')
         print(driver)
