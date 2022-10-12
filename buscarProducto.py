@@ -39,10 +39,10 @@ import calendar
 
 gmt = time.gmtime()
 
-ruta_img = "C:\\Users\\kacosta\\Documents\\testk\\scrap\\img\\"
+ruta_img = "/var/www/html/josefina/chrome/"
 name_img = ""
 timer = time.time()
-mainpath = "C:\\chrome\\"
+mainpath = "/var/www/html/josefina/chrome/"
 
 buscarProducto = Blueprint('buscarProducto', __name__)
 
@@ -93,7 +93,7 @@ def scrapSeis(request):
         options.add_argument('--start-maximized')
         options.add_argument('--disable-extensions')
         
-        driver_path = 'C:\\Users\\acost\\Documents\\botScrap\\spyder\\chrome\\chromedriver.exe'
+        driver_path = '/var/www/html/josefina/chrome/chromedriver'
         
         # Se crea la variable driver y se le pasa drive path que es la ruta del driver y se le pasa options
         #print('PID4: ' + str(PID))
