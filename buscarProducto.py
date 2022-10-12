@@ -84,7 +84,7 @@ def scrapSeis(request):
         producto = request.json['producto']
         print('Producto a buscar--->', producto)
 
-        fullpath = os.path.join(mainpath)
+        #fullpath = os.path.join(mainpath)
         
         # Opciones de Navegacion
        
