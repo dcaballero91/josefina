@@ -88,24 +88,34 @@ def scrapSeis(request):
         
         # Opciones de Navegacion
        
+        sleep_segunos = 10
+        server_home = 'https://www.superseis.com.py/search.aspx?searchterms='
+        ruta = ''
+        #Ruta para windows
+        #mainpath= "C:\\Users\\dcaballe\\Desktop\\"
+    
+        #Ruta para Linux
+        mainpath="/var/www/html/josefina/"
+        fullpath= os.path.join(mainpath)
         options = webdriver.ChromeOptions()
+        #Driver para linux descomentar o comentar de acuerdo al entorno
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--test-type")
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
-        print("Despues de opciones")
-        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/var/www/htmle/josefina/chrome/chromedriver')
-        print("Driver")
+        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/var/www/html/josefina/chromedriver')
         #Driver para Windows
+        print("Despues driver")
         #driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\\chrome\\chromedriver.exe')
         print(driver)
         PID = driver.service.process.pid ##ID proceso Chromedriver
         print('PID: ' + str(PID))
         ##driver.implicitly_wait(10)
         driver.set_page_load_timeout(25)
+    
 
         #Inicializamos el Navegador 
-        driver.get('https://www.superseis.com.py/search.aspx?searchterms='+producto)
+        driver.get(server_home+producto)
         print("Get")
         #driver.get('https://www.superseis.com.py/AddToCart.aspx?ProductId=259846&Cantidad=1&Container=Modulo%20de%20Busquedas&ButtonParameters=Pagina%20principal')
         time.sleep(2)
