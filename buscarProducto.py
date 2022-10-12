@@ -97,7 +97,7 @@ def scrapSeis(request):
         options.add_argument('--no-sandbox')
         
         driver_path = '/var/www/html/josefina/chrome/chromedriver'
-        
+        print("driver path",driver_path)
         # Se crea la variable driver y se le pasa drive path que es la ruta del driver y se le pasa options
         #print('PID4: ' + str(PID))
         driver = webdriver.Chrome(driver_path, chrome_options = options)
@@ -112,6 +112,7 @@ def scrapSeis(request):
 
         #Inicializamos el Navegador 
         driver.get('https://www.superseis.com.py/search.aspx?searchterms='+producto)
+        print("Get")
         #driver.get('https://www.superseis.com.py/AddToCart.aspx?ProductId=259846&Cantidad=1&Container=Modulo%20de%20Busquedas&ButtonParameters=Pagina%20principal')
         time.sleep(2)
         
