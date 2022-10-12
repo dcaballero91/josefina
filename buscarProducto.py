@@ -19,6 +19,8 @@ NIS:2314468
 
 
 """
+from cmath import e
+from tkinter import E
 from flask import Blueprint, request, jsonify
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
@@ -192,9 +194,9 @@ def scrapSeis(request):
         codRes = 'SIN_ERROR'
         menRes = 'OK'
         resPath = lista
-    except:
+    except Exception as e:
         codRes = 'ERROR'
-        menRes = 'OK'
+        menRes = e
         resPath = 'NULL'
     
     
