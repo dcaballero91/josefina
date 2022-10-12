@@ -95,21 +95,14 @@ def scrapSeis(request):
         options.add_argument("--test-type")
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
-        
-        driver_path = '/var/www/html/josefina/chrome/chromedriver'
-        print("driver path",driver_path)
-        # Se crea la variable driver y se le pasa drive path que es la ruta del driver y se le pasa options
-        #print('PID4: ' + str(PID))
-        driver = webdriver.Chrome(driver_path, chrome_options = options)
-        print("Despues de driver path")
-        # Inicializarla en la pantalla 2
-        driver.set_window_position(2000, 0)
-        driver.maximize_window()
-        print("Set max")
-        PID = driver.service.process.pid ##ID proceso Chomedriver
-        print ('PID: ' + str(PID))
-        time.sleep(3)
-        
+        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/var/www/html/josefina/chrome/chromedriver')
+        #Driver para Windows
+        #driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\\chrome\\chromedriver.exe')
+        print(driver)
+        PID = driver.service.process.pid ##ID proceso Chromedriver
+        print('PID: ' + str(PID))
+        ##driver.implicitly_wait(10)
+        driver.set_page_load_timeout(25)
 
         #Inicializamos el Navegador 
         driver.get('https://www.superseis.com.py/search.aspx?searchterms='+producto)
