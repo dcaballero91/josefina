@@ -56,6 +56,7 @@ def llamarServicioSet():
     global nombre,telefono,canal,detalle
     #producto =  request.json['producto']
     scrapSeis(request)
+    print(scrapSeis)
     #if canal == 'ANDE':
         #scrapAnde(request)
     #elif canal == 'CLARO':
