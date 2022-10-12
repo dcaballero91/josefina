@@ -89,13 +89,12 @@ def scrapSeis(request):
         # Opciones de Navegacion
        
         options = webdriver.ChromeOptions()
-        options.add_experimental_option("excludeSwitches", ["enable-logging"])
-        options.headless = True
         options.add_argument('--ignore-certificate-errors')
         options.add_argument("--test-type")
         options.add_argument('--headless')
         options.add_argument('--no-sandbox')
-        driver = webdriver.Chrome(chrome_options=options, executable_path=r'/opt/bonus/chromedriver')
+        print("Despues de opciones")
+        driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\\chrome\\chromedriver')
         print("Driver")
         #Driver para Windows
         #driver = webdriver.Chrome(chrome_options=options, executable_path=r'C:\\chrome\\chromedriver.exe')
