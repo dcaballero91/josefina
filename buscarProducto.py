@@ -101,10 +101,11 @@ def scrapSeis(request):
         # Se crea la variable driver y se le pasa drive path que es la ruta del driver y se le pasa options
         #print('PID4: ' + str(PID))
         driver = webdriver.Chrome(driver_path, chrome_options = options)
-        
+        print("Despues de driver path")
         # Inicializarla en la pantalla 2
         driver.set_window_position(2000, 0)
         driver.maximize_window()
+        print("Set max")
         PID = driver.service.process.pid ##ID proceso Chomedriver
         print ('PID: ' + str(PID))
         time.sleep(3)
